@@ -8,24 +8,33 @@
                         "description": "UA Companion volume knob override",
                         "manipulators": [
                             {
-                                "conditions": [{ "type": "variable_if", "name": "ua_connected", "value": 1 }],
-                                "description": "Mute -> UA Companion toggle mute",
+                                "description": "Mute button -> UA Companion mute (or system mute)",
                                 "from": { "consumer_key_code": "mute" },
-                                "to": [{ "shell_command": "/Users/e/.config/karabiner/ua_volume.sh mute" }],
+                                "to": [
+                                    {
+                                        "shell_command": "/Users/e/.config/karabiner/ua_mute_toggle.sh"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [{ "type": "variable_if", "name": "ua_connected", "value": 1 }],
-                                "description": "Volume Up -> UA Companion increase volume",
+                                "description": "Volume Up -> UA Companion increase volume (or system volume)",
                                 "from": { "consumer_key_code": "volume_increment" },
-                                "to": [{ "shell_command": "/Users/e/.config/karabiner/ua_volume.sh up" }],
+                                "to": [
+                                    {
+                                        "shell_command": "/Users/e/.config/karabiner/ua_volume.sh up"
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
-                                "conditions": [{ "type": "variable_if", "name": "ua_connected", "value": 1 }],
-                                "description": "Volume Down -> UA Companion decrease volume",
+                                "description": "Volume Down -> UA Companion decrease volume (or system volume)",
                                 "from": { "consumer_key_code": "volume_decrement" },
-                                "to": [{ "shell_command": "/Users/e/.config/karabiner/ua_volume.sh down" }],
+                                "to": [
+                                    {
+                                        "shell_command": "/Users/e/.config/karabiner/ua_volume.sh down"
+                                    }
+                                ],
                                 "type": "basic"
                             }
                         ]
@@ -548,6 +557,7 @@
                         "product_id": 20548,
                         "vendor_id": 12815
                     },
+                    "ignore": false,
                     "manipulate_caps_lock_led": false
                 }
             ],
